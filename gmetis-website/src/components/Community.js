@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+
 const CommunityContainer = styled.section`
   padding: 40px 20px;
   text-align: center;
