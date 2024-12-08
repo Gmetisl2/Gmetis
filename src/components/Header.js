@@ -5,7 +5,7 @@ import { FaBars, FaTimes } from 'react-icons/fa';
 
 const HeaderContainer = styled.header`
   background-color: #007acc;
-  padding: 20px;
+  padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,7 +14,7 @@ const HeaderContainer = styled.header`
   width: 100%; /* Expand header to 100% width */
   top: 0;
   z-index: 1000; /* Ensure header is on top */
-  flex-direction: column; /* Stack items vertically */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
 `;
 
 const LogoContainer = styled.div`
@@ -37,20 +37,21 @@ const ProjectName = styled.span`
 const Nav = styled.nav`
   display: flex;
   gap: 20px;
-  width: 100%; /* Full width for the nav */
 
   @media (max-width: 768px) {
     display: ${(props) => (props.open ? 'flex' : 'none')}; /* Change 'block' to 'flex' */
     flex-direction: column; /* Stack items vertically */
     align-items: center; /* Center items */
+    position: absolute;
+    top: 70px;
+    right: 0;
+    left: 0;
     background-color: #007acc; /* Fully opaque background color */
     padding: 20px;
     border-radius: 5px;
     z-index: 1001; /* Ensure it covers other content */
     text-align: center; /* Center-align text */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
-    position: relative; /* Adjust positioning */
-    top: 20px; /* Adjust to push content down */
   }
 `;
 
