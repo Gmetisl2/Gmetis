@@ -18,6 +18,7 @@ const AppContainer = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   position: relative;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
   &::before {
     content: '';
     position: absolute;
