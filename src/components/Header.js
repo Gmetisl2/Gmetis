@@ -36,13 +36,15 @@ const Nav = styled.nav`
   gap: 20px;
 
   @media (max-width: 768px) {
-    display: ${(props) => (props.open ? 'block' : 'none')};
+    display: ${(props) => (props.open ? 'flex' : 'none')}; /* Change 'block' to 'flex' */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items */
     position: absolute;
     top: 70px;
     right: 0;
     left: 0;
     background-color: rgba(0, 122, 204, 0.95); /* More opaque background color */
-    padding: 10px;
+    padding: 20px; /* Increased padding */
     border-radius: 5px;
     z-index: 1001; /* Ensure it covers other content */
     text-align: center; /* Center-align text */
@@ -56,6 +58,7 @@ const NavLink = styled.a`
   font-weight: bold;
   display: block;
   margin: 10px 0;
+  width: 100%; /* Ensure full width for clickable area */
 
   &:hover {
     text-decoration: underline;
