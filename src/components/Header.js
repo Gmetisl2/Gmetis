@@ -36,12 +36,16 @@ const Nav = styled.nav`
 
   @media (max-width: 768px) {
     display: ${(props) => (props.open ? 'block' : 'none')};
-    position: absolute;
-    top: 70px;
-    right: 20px;
+    position: fixed; /* Change from absolute to fixed */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
     background-color: #007acc;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 20px; /* Adjust padding as needed */
+    border-radius: 0; /* Remove border-radius */
+    z-index: 1000; /* Ensure it covers other content */
+    text-align: center; /* Center-align text */
   }
 `;
 
