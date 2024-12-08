@@ -11,6 +11,7 @@ const HeaderContainer = styled.header`
   align-items: center;
   color: #fff;
   position: relative;
+  z-index: 1000; /* Ensure header is on top */
 `;
 
 const LogoContainer = styled.div`
@@ -38,11 +39,12 @@ const Nav = styled.nav`
     display: ${(props) => (props.open ? 'block' : 'none')};
     position: absolute;
     top: 70px;
-    right: 20px;
+    right: 0;
+    left: 0; /* Ensure full width */
     background-color: #007acc; /* Opaque background color */
     padding: 10px;
     border-radius: 5px;
-    z-index: 1000; /* Ensure it covers other content */
+    z-index: 999; /* Ensure it covers other content */
     text-align: center; /* Center-align text */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
   }
@@ -66,6 +68,7 @@ const HamburgerIcon = styled.div`
   @media (max-width: 768px) {
     display: block;
     cursor: pointer;
+    z-index: 1001; /* Ensure hamburger icon is on top */
   }
 `;
 
