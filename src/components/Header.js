@@ -84,10 +84,9 @@ const Header = () => {
         {menuOpen ? <FaTimes size={30} /> : <FaBars size={30} />}
       </HamburgerIcon>
       <Nav open={menuOpen}>
-        <NavLink href="https://docs.gmetis.io" target="_blank">Documentation</NavLink>
-        <NavLink href="https://herculesdex.com/buy-gmetis" target="_blank">Buy gMetis</NavLink>
-        <NavLink href="https://t.me/yourtelegramlink" target="_blank">Join TG</NavLink>
-        <NavLink href="https://metis.io" target="_blank">Bridge to Metis</NavLink>
+        <NavLink href="https://docs.gmetis.io" target="_blank">Documentation</
+        <NavLink href="https://t.me/gmetisio" target="_blank">Join TG</NavLink>
+        <NavLink href="https://metis.io/bridge" target="_blank">Bridge to Metis</NavLink>
       </Nav>
     </HeaderContainer>
   );
