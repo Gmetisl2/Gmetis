@@ -59,7 +59,7 @@ const NavLink = styled.a`
   display: block;
   margin: 10px 0;
   width: 100%; /* Ensure full width for clickable area */
-
+  z-index: 1003;
   &:hover {
     text-decoration: underline;
   }
