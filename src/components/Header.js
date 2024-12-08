@@ -41,10 +41,10 @@ const Nav = styled.nav`
     top: 70px;
     right: 0;
     left: 0;
-    background-color: #007acc; /* Opaque background color */
+    background-color: rgba(0, 122, 204, 0.95); /* More opaque background color */
     padding: 10px;
     border-radius: 5px;
-    z-index: 999; /* Ensure it covers other content */
+    z-index: 1001; /* Ensure it covers other content */
     text-align: center; /* Center-align text */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
   }
@@ -56,7 +56,6 @@ const NavLink = styled.a`
   font-weight: bold;
   display: block;
   margin: 10px 0;
-  z-index: 1002; /* Ensure menu items are clickable */
 
   &:hover {
     text-decoration: underline;
@@ -69,7 +68,7 @@ const HamburgerIcon = styled.div`
   @media (max-width: 768px) {
     display: block;
     cursor: pointer;
-    z-index: 1001; /* Ensure hamburger icon is on top */
+    z-index: 1002; /* Ensure hamburger icon is on top */
   }
 `;
 
