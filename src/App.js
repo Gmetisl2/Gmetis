@@ -12,12 +12,12 @@ import React, { useEffect } from 'react';
 
 const App = () => {
   useEffect(() => {
-    document.title = "My New Title";
+    document.title = "gMetis";
   }, []);
 
   return (
     <div>
-      <h1>Welcome to My App</h1>
+      <h1>Welcome to gMetis</h1>
     </div>
   );
 };
