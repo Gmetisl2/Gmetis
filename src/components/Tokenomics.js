@@ -5,9 +5,15 @@ import 'chart.js/auto';
 
 const TokenomicsContainer = styled.section`
   padding: 40px 20px;
-  text-align: left;
+  display: flex;
+  justify-content: space-between;
   max-width: 800px;
   margin: 0 auto;
+`;
+
+const TokenomicsDetails = styled.div`
+  flex: 1;
+  margin-right: 20px;
 `;
 
 const TokenomicsTitle = styled.h2`
@@ -24,25 +30,27 @@ const data = {
   datasets: [
     {
       data: [30, 36.5, 13.5, 10, 10],
-      backgroundColor: ['#ff9999', '#66b3ff', '#99ff99', '#ffcc99', '#c2c2f0'],
-      hoverBackgroundColor: ['#ff6666', '#3399ff', '#66ff66', '#ff9966', '#9999ff'],
+      backgroundColor: ['#d9d9d9', '#bfbfbf', '#a6a6a6', '#8c8c8c', '#737373'],
+      hoverBackgroundColor: ['#bfbfbf', '#a6a6a6', '#8c8c8c', '#737373', '#595959'],
     },
   ],
 };
 
 const Tokenomics = () => (
   <TokenomicsContainer>
-    <TokenomicsTitle>Tokenomics</TokenomicsTitle>
-    <TokenomicsDescription>
-      gMetis is an ERC-20 token with a total supply of 10,000,000 tokens. The tokens are allocated as follows:
-    </TokenomicsDescription>
-    <ul>
-      <li>30% for liquidity pool</li>
-      <li>36.5% for rewards</li>
-      <li>13.5% for team budget</li>
-      <li>10% for infrastructure costs</li>
-      <li>10% for marketing</li>
-    </ul>
+    <TokenomicsDetails>
+      <TokenomicsTitle>Tokenomics</TokenomicsTitle>
+      <TokenomicsDescription>
+        gMetis is an ERC-20 token with a total supply of 10,000,000 tokens. The tokens are allocated as follows:
+      </TokenomicsDescription>
+      <ul>
+        <li>30% for liquidity pool</li>
+        <li>36.5% for rewards</li>
+        <li>13.5% for team budget</li>
+        <li>10% for infrastructure costs</li>
+        <li>10% for marketing</li>
+      </ul>
+    </TokenomicsDetails>
     <Pie data={data} />
     <div style={{ textAlign: 'center', marginTop: '20px' }}>
       <Button href="https://herculesdex.com/buy-gmetis" target="_blank">Buy Token</Button>

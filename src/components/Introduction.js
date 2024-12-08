@@ -27,7 +27,7 @@ const Introduction = () => (
     <Description>
       gMetis is a pioneering AI-agent-driven crypto project built on the Metis Layer 2 of Ethereum. It combines the engaging aspects of a meme token with the utility of an AI-driven community management tool.
     </Description>
-    <PlaceholderImage />
+
   </IntroductionContainer>
 );
 
