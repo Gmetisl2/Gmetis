@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import Header from './components/Header';
 import Introduction from './components/Introduction';
-import KPIs from './components/KPIs';
 import Community from './components/Community';
 import Tokenomics from './components/Tokenomics';
 import Footer from './components/Footer';
@@ -44,7 +43,6 @@ function App() {
     <AppContainer>
       <Header />
       <Introduction />
-      /<KPIs />
       <Community />
       <Tokenomics />
       <Footer />
