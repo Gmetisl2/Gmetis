@@ -53,7 +53,7 @@ const Nav = styled.nav`
 `;
 
 const NavLink = styled.a`
-  color: black; /* Changed to black for testing */
+  color: #fff; 
   text-decoration: none;
   font-weight: bold;
   display: block;
