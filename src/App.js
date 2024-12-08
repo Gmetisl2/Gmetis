@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import Header from './components/Header';
 import Introduction from './components/Introduction';
@@ -6,23 +6,6 @@ import KPIs from './components/KPIs';
 import Community from './components/Community';
 import Tokenomics from './components/Tokenomics';
 import Footer from './components/Footer';
-
-// src/App.js
-import React, { useEffect } from 'react';
-
-const App = () => {
-  useEffect(() => {
-    document.title = "gMetis";
-  }, []);
-
-  return (
-    <div>
-      <h1>Welcome to gMetis</h1>
-    </div>
-  );
-};
-
-export default App;
 
 const AppContainer = styled.div`
   text-align: center;
@@ -32,6 +15,10 @@ const AppContainer = styled.div`
 `;
 
 function App() {
+  useEffect(() => {
+    document.title = "gMetis - the AI Agent Metis MEME";
+  }, []);
+
   return (
     <AppContainer>
       <Header />
