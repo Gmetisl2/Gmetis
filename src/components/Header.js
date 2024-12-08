@@ -1,20 +1,19 @@
-import React, { useState } from 'react';
 import styled from 'styled-components';
 import logo from './logo.jpg'; // Adjust the import path
 import { FaBars, FaTimes } from 'react-icons/fa';
 
 const HeaderContainer = styled.header`
   background-color: #007acc;
-  padding: 10px 20px; /* Reduce padding to fit better on screen */
+  padding: 20px;
   display: flex;
-  justify-content: space-between; /* Ensure items are spaced out */
+  justify-content: space-between;
   align-items: center;
   color: #fff;
   position: fixed; /* Make the header fixed */
   width: 100%; /* Expand header to 100% width */
   top: 0;
   z-index: 1000; /* Ensure header is on top */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
+  flex-direction: column; /* Stack items vertically */
 `;
 
 const LogoContainer = styled.div`
@@ -37,25 +36,25 @@ const ProjectName = styled.span`
 const Nav = styled.nav`
   display: flex;
   gap: 20px;
+  width: 100%; /* Full width for the nav */
 
   @media (max-width: 768px) {
-    display: ${(props) => (props.open ? 'flex' : 'none')};
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    top: 60px; /* Ensure it appears just below the header */
-    right: 0;
-    left: 0;
+    display: ${(props) => (props.open ? 'flex' : 'none')}; /* Change 'block' to 'flex' */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items */
     background-color: #007acc; /* Fully opaque background color */
     padding: 20px;
     border-radius: 5px;
-    z-index: 999;
+    z-index: 1001; /* Ensure it covers other content */
+    text-align: center; /* Center-align text */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
+    position: relative; /* Adjust positioning */
+    top: 20px; /* Adjust to push content down */
   }
 `;
 
 const NavLink = styled.a`
-  color: #fff; /* Ensure links are white for visibility */
+  color: black; /* Change to black for better visibility */
   text-decoration: none;
   font-weight: bold;
   display: block;
@@ -73,7 +72,7 @@ const HamburgerIcon = styled.div`
   @media (max-width: 768px) {
     display: block;
     cursor: pointer;
-    z-index: 1001; /* Ensure hamburger icon is on top */
+    z-index: 1002; /* Ensure hamburger icon is on top */
   }
 `;
 
