@@ -1,105 +1,54 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import logo from './logo.jpg'; // Adjust the import path
-import { FaBars, FaTimes } from 'react-icons/fa';
+import Header from './components/Header';
+import Introduction from './components/Introduction';
+import Community from './components/Community';
+import Tokenomics from './components/Tokenomics';
+import Footer from './components/Footer';
+import bgGif from './components/bg.gif';
 
-const HeaderContainer = styled.header`
-  background-color: #007acc;
-  padding: 10px 20px; /* Reduce padding to fit better on screen */
-  display: flex;
-  justify-content: space-between; /* Ensure items are spaced out */
-  align-items: center;
-  color: #fff;
-  position: fixed; /* Make the header fixed */
-  width: 100%; /* Expand header to 100% width */
-  top: 0;
-  z-index: 1000; /* Ensure header is on top */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
-`;
-
-const LogoContainer = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-const Logo = styled.img`
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-right: 10px;
-`;
-
-const ProjectName = styled.span`
-  font-size: 1.5em;
-  font-weight: bold;
-`;
-
-const Nav = styled.nav`
-  display: flex;
-  gap: 20px;
-
-  @media (max-width: 768px) {
-    display: ${(props) => (props.open ? 'flex' : 'none')};
-    flex-direction: column;
-    align-items: center;
+const AppContainer = styled.div`
+  text-align: center;
+  background-color: #f0f0f0;
+  color: #333;
+  font-family: Arial, sans-serif;
+  background-image: url(${bgGif});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  padding-top: 100px; /* Add padding to the top to avoid overlap */
+  &::before {
+    content: '';
     position: absolute;
-    top: 60px; /* Ensure it appears just below the header */
-    right: 0;
+    top: 0;
     left: 0;
-    background-color: #007acc; /* Fully opaque background color */
-    padding: 20px;
-    border-radius: 5px;
-    z-index: 999;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.7); /* Adjust transparency here */
+    z-index: 1; /* Ensure the overlay is above the background but below content */
+  }
+  > * {
+    position: relative;
+    z-index: 2; /* Ensure content is above the overlay */
   }
 `;
 
-const NavLink = styled.a`
-  color: #fff; /* Ensure links are white for visibility */
-  text-decoration: none;
-  font-weight: bold;
-  display: block;
-  margin: 10px 0;
-  width: 100%; /* Ensure full width for clickable area */
-
-  &:hover {
-    text-decoration: underline;
-  }
-`;
-
-const HamburgerIcon = styled.div`
-  display: none;
-
-  @media (max-width: 768px) {
-    display: block;
-    cursor: pointer;
-    z-index: 1001; /* Ensure hamburger icon is on top */
-  }
-`;
-
-const Header = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  const handleMenuToggle = () => {
-    setMenuOpen(!menuOpen);
-  };
+function App() {
+  useEffect(() => {
+    document.title = "gMetis - the AI Agent Metis MEME";
+  }, []);
 
   return (
-    <HeaderContainer>
-      <LogoContainer>
-        <Logo src={logo} alt="gMetis Logo" />
-        <ProjectName>gMetis</ProjectName>
-      </LogoContainer>
-      <HamburgerIcon onClick={handleMenuToggle}>
-        {menuOpen ? <FaTimes size={30} /> : <FaBars size={30} />}
-      </HamburgerIcon>
-      <Nav open={menuOpen}>
-        <NavLink href="https://docs.gmetis.io" target="_blank" onClick={handleMenuToggle}>Documentation</NavLink>
-        <NavLink href="https://t.me/gmetisio" target="_blank" onClick={handleMenuToggle}>Join TG</NavLink>
-        <NavLink href="https://metis.io/bridge" target="_blank" onClick={handleMenuToggle}>Bridge to Metis</NavLink>
-      </Nav>
-    </HeaderContainer>
+    <AppContainer>
+      <Header />
+      <Introduction />
+      <Community />
+      <Tokenomics />
+      <Footer />
+    </AppContainer>
   );
-};
+}
 
-export default Header;
+export default App;
