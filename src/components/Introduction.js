@@ -14,20 +14,12 @@ const Description = styled.p`
   margin: 20px 0;
 `;
 
-const PlaceholderImage = styled.div`
-  width: 100%;
-  height: 200px;
-  background-color: #ccc;
-  margin: 20px 0;
-`;
-
 const Introduction = () => (
   <IntroductionContainer>
     <Title>Welcome to gMetis</Title>
     <Description>
       gMetis is a pioneering AI-agent-driven crypto project built on the Metis Layer 2 of Ethereum. It combines the engaging aspects of a meme token with the utility of an AI-driven community management tool.
     </Description>
-
   </IntroductionContainer>
 );
 
