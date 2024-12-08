@@ -10,8 +10,11 @@ const HeaderContainer = styled.header`
   justify-content: space-between;
   align-items: center;
   color: #fff;
-  position: relative;
+  position: fixed; /* Make the header fixed */
+  width: 100%; /* Expand header to 100% width */
+  top: 0;
   z-index: 1000; /* Ensure header is on top */
+  flex-direction: column; /* Stack items vertically */
 `;
 
 const LogoContainer = styled.div`
@@ -34,26 +37,25 @@ const ProjectName = styled.span`
 const Nav = styled.nav`
   display: flex;
   gap: 20px;
+  width: 100%; /* Full width for the nav */
 
   @media (max-width: 768px) {
-    display: ${(props) => (props.open ? 'flex' : 'none')};
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    top: 70px;
-    right: 0;
-    left: 0;
+    display: ${(props) => (props.open ? 'flex' : 'none')}; /* Change 'block' to 'flex' */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items */
     background-color: #007acc; /* Fully opaque background color */
     padding: 20px;
     border-radius: 5px;
     z-index: 1001; /* Ensure it covers other content */
     text-align: center; /* Center-align text */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
+    position: relative; /* Adjust positioning */
+    top: 20px; /* Adjust to push content down */
   }
 `;
 
 const NavLink = styled.a`
-  color: #fff; 
+  color: black; /* Change to black for better visibility */
   text-decoration: none;
   font-weight: bold;
   display: block;
