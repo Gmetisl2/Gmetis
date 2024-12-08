@@ -80,7 +80,7 @@ const Tokenomics = () => (
     <ChartContainer>
       <Pie data={data} options={options} />
     </ChartContainer>
-    <p><strong>Note:</strong> "Rewards" are only accessible by the AI agent and no one else.</p>
+    <p><strong>Note:</strong> Rewards are securely stored in a separate wallet, accessible exclusively by the AI agent..</p>
     <div style={{ textAlign: 'center', marginTop: '20px' }}>
       <Button href="https://herculesdex.com/buy-gmetis" target="_blank">Buy Token</Button>
     </div>
