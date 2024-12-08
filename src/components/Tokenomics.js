@@ -6,14 +6,15 @@ import 'chart.js/auto';
 const TokenomicsContainer = styled.section`
   padding: 40px 20px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
   max-width: 800px;
   margin: 0 auto;
 `;
 
 const TokenomicsDetails = styled.div`
   flex: 1;
-  margin-right: 20px;
+  text-align: center;
 `;
 
 const TokenomicsTitle = styled.h2`
@@ -32,9 +33,38 @@ const data = {
       data: [30, 36.5, 13.5, 10, 10],
       backgroundColor: ['#d9d9d9', '#bfbfbf', '#a6a6a6', '#8c8c8c', '#737373'],
       hoverBackgroundColor: ['#bfbfbf', '#a6a6a6', '#8c8c8c', '#737373', '#595959'],
+      borderWidth: 1,
     },
   ],
 };
+
+const options = {
+  plugins: {
+    legend: {
+      display: false, // Hide legend
+    },
+    tooltip: {
+      callbacks: {
+        label: function(context) {
+          let label = context.label || '';
+          if (label) {
+            label += ': ';
+          }
+          label += `${context.raw}%`;
+          return label;
+        }
+      }
+    }
+  },
+  responsive: true,
+  maintainAspectRatio: false,
+};
+
+const ChartContainer = styled.div`
+  width: 100%;
+  max-width: 400px; /* Set a max width for the chart */
+  margin: 20px auto;
+`;
 
 const Tokenomics = () => (
   <TokenomicsContainer>
@@ -51,7 +81,10 @@ const Tokenomics = () => (
         <li>10% for marketing</li>
       </ul>
     </TokenomicsDetails>
-    <Pie data={data} />
+    <ChartContainer>
+      <Pie data={data} options={options} />
+    </ChartContainer>
+    <p><strong>Note:</strong> "Rewards" are only accessible by the AI agent and no one else.</p>
     <div style={{ textAlign: 'center', marginTop: '20px' }}>
       <Button href="https://herculesdex.com/buy-gmetis" target="_blank">Buy Token</Button>
     </div>
