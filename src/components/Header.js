@@ -40,7 +40,7 @@ const Nav = styled.nav`
     position: absolute;
     top: 70px;
     right: 0;
-    left: 0; /* Ensure full width */
+    left: 0;
     background-color: #007acc; /* Opaque background color */
     padding: 10px;
     border-radius: 5px;
@@ -56,6 +56,7 @@ const NavLink = styled.a`
   font-weight: bold;
   display: block;
   margin: 10px 0;
+  z-index: 1002; /* Ensure menu items are clickable */
 
   &:hover {
     text-decoration: underline;
@@ -75,19 +76,23 @@ const HamburgerIcon = styled.div`
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const handleMenuToggle = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <HeaderContainer>
       <LogoContainer>
         <Logo src={logo} alt="gMetis Logo" />
         <ProjectName>gMetis</ProjectName>
       </LogoContainer>
-      <HamburgerIcon onClick={() => setMenuOpen(!menuOpen)}>
+      <HamburgerIcon onClick={handleMenuToggle}>
         {menuOpen ? <FaTimes size={30} /> : <FaBars size={30} />}
       </HamburgerIcon>
       <Nav open={menuOpen}>
-        <NavLink href="https://docs.gmetis.io" target="_blank">Documentation</NavLink>
-        <NavLink href="https://t.me/gmetisio" target="_blank">Join TG</NavLink>
-        <NavLink href="https://metis.io/bridge" target="_blank">Bridge to Metis</NavLink>
+        <NavLink href="https://docs.gmetis.io" target="_blank" onClick={handleMenuToggle}>Documentation</NavLink>
+        <NavLink href="https://t.me/gmetisio" target="_blank" onClick={handleMenuToggle}>Join TG</NavLink>
+        <NavLink href="https://metis.io/bridge" target="_blank" onClick={handleMenuToggle}>Bridge to Metis</NavLink>
       </Nav>
     </HeaderContainer>
   );
