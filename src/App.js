@@ -44,7 +44,7 @@ function App() {
     <AppContainer>
       <Header />
       <Introduction />
-      <KPIs />
+      /<KPIs />
       <Community />
       <Tokenomics />
       <Footer />
