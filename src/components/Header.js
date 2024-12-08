@@ -44,8 +44,10 @@ const Nav = styled.nav`
     border-radius: 5px;
     z-index: 1000; /* Ensure it covers other content */
     text-align: center; /* Center-align text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
   }
 `;
+
 
 
 const NavLink = styled.a`
