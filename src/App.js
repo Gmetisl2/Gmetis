@@ -18,7 +18,8 @@ const AppContainer = styled.div`
   background-position: center;
   position: relative;
   overflow-x: hidden; /* Prevent horizontal scrolling */
-  padding-top: 120px; /* Add padding to the top to avoid overlap */
+  padding-top: 80px; /* Add padding to the top to avoid overlap */
+  margin: 0; /* Remove any default margin */
   &::before {
     content: '';
     position: absolute;
