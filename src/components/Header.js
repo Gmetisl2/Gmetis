@@ -36,15 +36,15 @@ const Nav = styled.nav`
   gap: 20px;
 
   @media (max-width: 768px) {
-    display: ${(props) => (props.open ? 'flex' : 'none')}; /* Change 'block' to 'flex' */
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items */
+    display: ${(props) => (props.open ? 'flex' : 'none')};
+    flex-direction: column;
+    align-items: center;
     position: absolute;
     top: 70px;
     right: 0;
     left: 0;
-    background-color: rgba(0, 122, 204, 1); /* More opaque background color */
-    padding: 20px; /* Increased padding */
+    background-color: #007acc; /* Fully opaque background color */
+    padding: 20px;
     border-radius: 5px;
     z-index: 1001; /* Ensure it covers other content */
     text-align: center; /* Center-align text */
@@ -53,13 +53,13 @@ const Nav = styled.nav`
 `;
 
 const NavLink = styled.a`
-  color: #000;
+  color: black; /* Changed to black for testing */
   text-decoration: none;
   font-weight: bold;
   display: block;
   margin: 10px 0;
   width: 100%; /* Ensure full width for clickable area */
-  z-index: 1003;
+
   &:hover {
     text-decoration: underline;
   }
