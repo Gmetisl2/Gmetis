@@ -14,7 +14,10 @@ const HeaderContainer = styled.header`
   width: 100%; /* Expand header to 100% width */
   top: 0;
   z-index: 1000; /* Ensure header is on top */
-  flex-direction: column; /* Stack items vertically */
+  flex-direction: row; /* Stack items horizontally */
+  @media (max-width: 768px) {
+    flex-direction: row; /* Stack items horizontally on mobile */
+  }
 `;
 
 const LogoContainer = styled.div`
@@ -37,30 +40,29 @@ const ProjectName = styled.span`
 const Nav = styled.nav`
   display: flex;
   gap: 20px;
-  width: 100%; /* Full width for the nav */
 
   @media (max-width: 768px) {
-    display: ${(props) => (props.open ? 'flex' : 'none')}; /* Change 'block' to 'flex' */
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items */
-    background-color: #007acc; /* Fully opaque background color */
+    display: ${(props) => (props.open ? 'flex' : 'none')};
+    flex-direction: column;
+    align-items: center;
+    background-color: #007acc;
     padding: 20px;
     border-radius: 5px;
-    z-index: 1001; /* Ensure it covers other content */
-    text-align: center; /* Center-align text */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
-    position: relative; /* Adjust positioning */
-    top: 20px; /* Adjust to push content down */
+    z-index: 1001;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    top: 20px;
   }
 `;
 
 const NavLink = styled.a`
-  color: black; /* Change to black for better visibility */
+  color: black;
   text-decoration: none;
   font-weight: bold;
   display: block;
   margin: 10px 0;
-  width: 100%; /* Ensure full width for clickable area */
+  width: 100%;
 
   &:hover {
     text-decoration: underline;
@@ -73,7 +75,7 @@ const HamburgerIcon = styled.div`
   @media (max-width: 768px) {
     display: block;
     cursor: pointer;
-    z-index: 1002; /* Ensure hamburger icon is on top */
+    z-index: 1002;
   }
 `;
 
