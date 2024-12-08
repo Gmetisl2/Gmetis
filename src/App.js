@@ -18,7 +18,7 @@ const AppContainer = styled.div`
   background-position: center;
   position: relative;
   overflow-x: hidden; /* Prevent horizontal scrolling */
-  z-index: 0; /* Ensure content is below header */
+  z-index: 1; /* Ensure content is below header */
   &::before {
     content: '';
     position: absolute;
@@ -26,12 +26,12 @@ const AppContainer = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(255, 255, 255, 0.5); /* 50% transparency */
+    background-color: rgba(255, 255, 255, 0.8); /* 50% transparency */
     z-index: -1; /* Ensure background is below content */
   }
   > * {
     position: relative;
-    z-index: 1;
+    z-index: 2;
   }
 `;
 
