@@ -7,6 +7,23 @@ import Community from './components/Community';
 import Tokenomics from './components/Tokenomics';
 import Footer from './components/Footer';
 
+// src/App.js
+import React, { useEffect } from 'react';
+
+const App = () => {
+  useEffect(() => {
+    document.title = "My New Title";
+  }, []);
+
+  return (
+    <div>
+      <h1>Welcome to My App</h1>
+    </div>
+  );
+};
+
+export default App;
+
 const AppContainer = styled.div`
   text-align: center;
   background-color: #f0f0f0;
