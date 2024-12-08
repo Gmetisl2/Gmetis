@@ -36,7 +36,7 @@ const Community = () => (
     <Description>
       Engage with our AI-driven community and earn daily rewards! The AI agent selects top contributors based on their engagement levels and rewards them with gMetis tokens.
     </Description>
-    <Button href="https://t.me/yourtelegramlink" target="_blank">Join Telegram</Button>
+    <Button href="https://t.me/gmetisio" target="_blank">Join Telegram</Button>
   </CommunityContainer>
 );
 
