@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import logo from './logo.jpg'; // Adjust the import path
+import { FaBars, FaTimes } from 'react-icons/fa';
 
 const HeaderContainer = styled.header`
   background-color: #007acc;
@@ -9,6 +10,7 @@ const HeaderContainer = styled.header`
   justify-content: space-between;
   align-items: center;
   color: #fff;
+  position: relative;
 `;
 
 const LogoContainer = styled.div`
@@ -31,31 +33,59 @@ const ProjectName = styled.span`
 const Nav = styled.nav`
   display: flex;
   gap: 20px;
+
+  @media (max-width: 768px) {
+    display: ${(props) => (props.open ? 'block' : 'none')};
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color: #007acc;
+    padding: 10px;
+    border-radius: 5px;
+  }
 `;
 
 const NavLink = styled.a`
   color: #fff;
   text-decoration: none;
   font-weight: bold;
+  display: block;
+  margin: 10px 0;
 
   &:hover {
     text-decoration: underline;
   }
 `;
 
-const Header = () => (
-  <HeaderContainer>
-    <LogoContainer>
-      <Logo src={logo} alt="gMetis Logo" />
-      <ProjectName>gMetis</ProjectName>
-    </LogoContainer>
-    <Nav>
-      <NavLink href="https://docs.gmetis.io" target="_blank">Documentation</NavLink>
-      <NavLink href="https://herculesdex.com/buy-gmetis" target="_blank">Buy gMetis</NavLink>
-      <NavLink href="https://t.me/yourtelegramlink" target="_blank">Join TG</NavLink>
-      <NavLink href="https://metis.io" target="_blank">Bridge to Metis</NavLink>
-    </Nav>
-  </HeaderContainer>
-);
+const HamburgerIcon = styled.div`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+    cursor: pointer;
+  }
+`;
+
+const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  return (
+    <HeaderContainer>
+      <LogoContainer>
+        <Logo src={logo} alt="gMetis Logo" />
+        <ProjectName>gMetis</ProjectName>
+      </LogoContainer>
+      <HamburgerIcon onClick={() => setMenuOpen(!menuOpen)}>
+        {menuOpen ? <FaTimes size={30} /> : <FaBars size={30} />}
+      </HamburgerIcon>
+      <Nav open={menuOpen}>
+        <NavLink href="https://docs.gmetis.io" target="_blank">Documentation</NavLink>
+        <NavLink href="https://herculesdex.com/buy-gmetis" target="_blank">Buy gMetis</NavLink>
+        <NavLink href="https://t.me/yourtelegramlink" target="_blank">Join TG</NavLink>
+        <NavLink href="https://metis.io" target="_blank">Bridge to Metis</NavLink>
+      </Nav>
+    </HeaderContainer>
+  );
+};
 
 export default Header;
