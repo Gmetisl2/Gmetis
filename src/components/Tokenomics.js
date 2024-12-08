@@ -31,9 +31,12 @@ const data = {
   datasets: [
     {
       data: [30, 36.5, 13.5, 10, 10],
-      backgroundColor: ['#d9d9d9', '#bfbfbf', '#a6a6a6', '#8c8c8c', '#737373'],
-      hoverBackgroundColor: ['#bfbfbf', '#a6a6a6', '#8c8c8c', '#737373', '#595959'],
+      backgroundColor: ['#007acc', '#36a2eb', '#a6a6a6', '#8c8c8c', '#737373'],
+      hoverBackgroundColor: ['#005999', '#258ccf', '#8c8c8c', '#737373', '#595959'],
       borderWidth: 1,
+      borderAlign: 'inner',
+      borderColor: ['#fff', '#fff', '#fff', '#fff', '#fff'],
+      offset: [5, 5, 0, 0, 0], // Exploding segments
     },
   ],
 };
@@ -73,13 +76,6 @@ const Tokenomics = () => (
       <TokenomicsDescription>
         gMetis is an ERC-20 token with a total supply of 10,000,000 tokens. The tokens are allocated as follows:
       </TokenomicsDescription>
-      <ul>
-        <li>30% for liquidity pool</li>
-        <li>36.5% for rewards</li>
-        <li>13.5% for team budget</li>
-        <li>10% for infrastructure costs</li>
-        <li>10% for marketing</li>
-      </ul>
     </TokenomicsDetails>
     <ChartContainer>
       <Pie data={data} options={options} />
