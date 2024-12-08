@@ -14,10 +14,7 @@ const HeaderContainer = styled.header`
   width: 100%; /* Expand header to 100% width */
   top: 0;
   z-index: 1000; /* Ensure header is on top */
-  flex-direction: row; /* Stack items horizontally */
-  @media (max-width: 768px) {
-    flex-direction: row; /* Stack items horizontally on mobile */
-  }
+  margin: 0; /* Remove any default margin */
 `;
 
 const LogoContainer = styled.div`
@@ -52,7 +49,7 @@ const Nav = styled.nav`
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;
-    top: 20px;
+    top: 60px; /* Position the menu below the hamburger icon */
   }
 `;
 
@@ -76,6 +73,8 @@ const HamburgerIcon = styled.div`
     display: block;
     cursor: pointer;
     z-index: 1002;
+    position: relative; /* Ensure it stays within the viewport */
+    right: 0;
   }
 `;
 
