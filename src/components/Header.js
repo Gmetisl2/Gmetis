@@ -43,7 +43,7 @@ const Nav = styled.nav`
     top: 70px;
     right: 0;
     left: 0;
-    background-color: rgba(0, 122, 204, 0.95); /* More opaque background color */
+    background-color: rgba(0, 122, 204, 1); /* More opaque background color */
     padding: 20px; /* Increased padding */
     border-radius: 5px;
     z-index: 1001; /* Ensure it covers other content */
@@ -53,7 +53,7 @@ const Nav = styled.nav`
 `;
 
 const NavLink = styled.a`
-  color: #fff;
+  color: #000;
   text-decoration: none;
   font-weight: bold;
   display: block;
