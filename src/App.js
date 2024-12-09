@@ -7,6 +7,7 @@ import Tokenomics from './components/Tokenomics';
 import Footer from './components/Footer';
 import bgGif from './components/bg.gif';
 
+
 const AppContainer = styled.div`
   text-align: center;
   background-color: #f0f0f0;
