@@ -37,6 +37,7 @@ const ProjectName = styled.span`
 const Nav = styled.nav`
   display: flex;
   gap: 20px;
+  margin-left: 10px;
 
   @media (max-width: 768px) {
     display: ${(props) => (props.open ? 'flex' : 'none')};
@@ -50,6 +51,7 @@ const Nav = styled.nav`
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;
     top: 60px; /* Position the menu below the hamburger icon */
+    margin-left: 10px;
   }
 `;
 
