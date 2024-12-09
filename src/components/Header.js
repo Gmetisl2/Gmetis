@@ -10,7 +10,7 @@ const HeaderContainer = styled.header`
   justify-content: space-between;
   align-items: center;
   color: #fff;
-  position: fixed; /* Make the header fixed */
+  position: absolute;
   width: 100%; /* Expand header to 100% width */
   top: 0;
   z-index: 1000; /* Ensure header is on top */
