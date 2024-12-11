@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaBars } from 'react-icons/fa'; // Importing the hamburger icon from react-icons
+import { FaBars } from 'react-icons/fa';
 import logo from './logo.jpg';
 
 const Header = () => {
@@ -16,24 +16,34 @@ const Header = () => {
         <h1 style={{ color: 'white', marginLeft: '10px' }}>gMetis</h1>
       </div>
       <nav>
-        <ul className="nav-links" style={{ display: 'flex', listStyle: 'none', margin: 0, padding: 0 }}>
+        <FaBars className="hamburger" size={30} color="white" onClick={toggleMenu} style={{ cursor: 'pointer' }} />
+        <ul className={`nav-links ${isOpen ? 'open' : ''}`} style={{ listStyle: 'none', margin: 0, padding: 0 }}>
           <li><a href="https://docs.gmetis.io" style={{ color: 'white', margin: '0 10px', textDecoration: 'underline' }}>Documentation</a></li>
           <li><a href="https://t.me/gmetisio" style={{ color: 'white', margin: '0 10px', textDecoration: 'underline' }}>Interact & Earn</a></li>
           <li><a href="https://metis.io/forge" style={{ color: 'white', margin: '0 10px', textDecoration: 'underline' }}>Public Sale Metis Forge</a></li>
           <li><a href="https://metis.io/bridge" style={{ color: 'white', margin: '0 10px', textDecoration: 'underline' }}>Bridge to Metis</a></li>
         </ul>
-        <FaBars className="hamburger" size={30} color="white" onClick={toggleMenu} style={{ cursor: 'pointer', display: 'none' }} />
-        <ul className="mobile-nav-links" style={{ display: isOpen ? 'flex' : 'none', flexDirection: 'column', listStyle: 'none', margin: 0, padding: 0, position: 'absolute', top: '60px', right: '10px', backgroundColor: '#007acc', borderRadius: '5px' }}>
-          <li><a href="https://docs.gmetis.io" style={{ color: 'white', margin: '10px 0', textDecoration: 'underline' }}>Documentation</a></li>
-          <li><a href="https://t.me/gmetisio" style={{ color: 'white', margin: '10px 0', textDecoration: 'underline' }}>Interact & Earn</a></li>
-          <li><a href="https://metis.io/forge" style={{ color: 'white', margin: '10px 0', textDecoration: 'underline' }}>Public Sale Metis Forge</a></li>
-          <li><a href="https://metis.io/bridge" style={{ color: 'white', margin: '10px 0', textDecoration: 'underline' }}>Bridge to Metis</a></li>
-        </ul>
       </nav>
       <style jsx>{`
+        .hamburger {
+          display: none;
+        }
+        .nav-links {
+          display: flex;
+        }
         @media (max-width: 768px) {
           .nav-links {
             display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            right: 10px;
+            background-color: #007acc;
+            border-radius: 5px;
+            padding: 10px;
+          }
+          .nav-links.open {
+            display: flex;
           }
           .hamburger {
             display: block;

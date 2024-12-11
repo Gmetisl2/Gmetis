@@ -16,3 +16,6 @@ main {
   padding: 20px;
   min-height: calc(100vh - 140px); /* Adjust height to fill the screen */
 }
+body, html {
+  overflow-x: hidden;
+}
