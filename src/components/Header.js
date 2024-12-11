@@ -41,6 +41,7 @@ const Header = () => {
             background-color: #007acc;
             border-radius: 5px;
             padding: 10px;
+            z-index: 1000; /* Ensure the menu is on top */
           }
           .nav-links.open {
             display: flex;
