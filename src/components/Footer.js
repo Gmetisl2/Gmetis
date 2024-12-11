@@ -1,25 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const FooterContainer = styled.footer`
-  background-color: #007acc;
-  padding: 20px;
-  color: #fff;
-  text-align: center;
-`;
-
-const Disclaimer = styled.p`
-  font-size: 0.8em;
-  margin-top: 10px;
-`;
 
 const Footer = () => (
-  <FooterContainer>
+  <footer style={{ backgroundColor: '#007acc', padding: '10px', color: 'white', textAlign: 'center' }}>
     <p>&copy; 2024 gMetis. All rights reserved.</p>
-    <Disclaimer>
-      Investing in crypto assets involves risk. Please ensure you fully understand the risks involved and invest responsibly. This project complies with MiCA regulations.
-    </Disclaimer>
-  </FooterContainer>
+    <p>Legal Disclaimer: Investing in cryptocurrency involves significant risk and can result in the loss of your invested capital. You should ensure that you fully understand the risk involved and seek independent advice if necessary.</p>
+  </footer>
 );
 
 export default Footer;
