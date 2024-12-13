@@ -20,7 +20,7 @@ const Header = () => {
         <ul className={`nav-links ${isOpen ? 'open' : ''}`} style={{ listStyle: 'none', margin: 0, padding: 0 }}>
           <li><a href="https://docs.gmetis.io" style={{ color: 'white', margin: '0 10px', textDecoration: 'underline' }}>Documentation</a></li>
           <li><a href="https://t.me/gmetisio" style={{ color: 'white', margin: '0 10px', textDecoration: 'underline' }}>Interact & Earn</a></li>
-          <li><a href="https://metis.io/forge" style={{ color: 'white', margin: '0 10px', textDecoration: 'underline' }}>Public Sale Metis Forge</a></li>
+          <li><a href="https://app.hercules.exchange/?token2=0xFbe0F778e3c1168bc63d7b6F880Ec0d5F9E524E6" style={{ color: 'white', margin: '0 10px', textDecoration: 'underline' }}>Buy $gMetis</a></li>
           <li><a href="https://metis.io/bridge" style={{ color: 'white', margin: '0 10px', textDecoration: 'underline' }}>Bridge to Metis</a></li>
         </ul>
       </nav>
